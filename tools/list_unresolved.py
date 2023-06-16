@@ -52,10 +52,10 @@ if __name__ == '__main__':
     unresolved -= closed
 
     ignore_counter = Counter(ignore_list.values())
-    hyfetch_merged = ignore_counter.pop('merged')
+    norfetch_merged = ignore_counter.pop('merged')
     print(f'Pull Request Statistics:')
-    print(f'> {hyfetch_merged} PRs merged by HyFetch')
-    print('\n'.join(f'> {c} PRs closed as {v} by HyFetch' for v, c in sorted(ignore_counter.items(), key=lambda x: -x[1])))
+    print(f'> {norfetch_merged} PRs merged by norfetch')
+    print('\n'.join(f'> {c} PRs closed as {v} by norfetch' for v, c in sorted(ignore_counter.items(), key=lambda x: -x[1])))
     print()
     print(f'> {len(draft)} PR drafts')
     print(f'> {len(merged)} PRs merged by neofetch')

@@ -32,7 +32,7 @@ jobs:
 
       - name: Update versions
         run: |
-              sed -i "/^ *VERSION = /cVERSION = '${{ env.BUILDVER }}'" hyfetch/constants.py
+              sed -i "/^ *VERSION = /cVERSION = '${{ env.BUILDVER }}'" norfetch/constants.py
 
       - name: Making tags
         run: |
@@ -82,7 +82,7 @@ jobs:
 
       - name: Update other versions
         run: |
-              sed -i "/^ *VERSION = /cVERSION = '${{ env.BUILDVER }}'" hyfetch/constants.py
+              sed -i "/^ *VERSION = /cVERSION = '${{ env.BUILDVER }}'" norfetch/constants.py
               sed -i "/^ *### Unpublished/c### ${{ env.BUILDVER }}" README.md
 
       - name: Make final tags

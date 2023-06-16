@@ -8,7 +8,7 @@ from pathlib import Path
 from .types import LightDark
 from .__version__ import VERSION
 
-CONFIG_PATH = Path.home() / '.config/hyfetch.json'
+CONFIG_PATH = Path.home() / '.config/norfetch.json'
 
 
 TEST_ASCII = r"""
@@ -29,7 +29,7 @@ TEST_ASCII_WIDTH = max(len(line) for line in TEST_ASCII.split('\n'))
 DEFAULT_DARK_L = 0.
 IS_WINDOWS = platform.system() == 'Windows'
 
-CACHE_PATH = Path(os.getenv("LOCALAPPDATA") or os.getenv("XDG_CACHE_HOME") or Path.home() / '.cache') / 'hyfetch'
+CACHE_PATH = Path(os.getenv("LOCALAPPDATA") or os.getenv("XDG_CACHE_HOME") or Path.home() / '.cache') / 'norfetch'
 
 @dataclass
 class GlobalConfig:

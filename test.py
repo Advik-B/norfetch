@@ -6,8 +6,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from urllib.request import urlretrieve
 
-from hyfetch.color_util import printc, color
-from hyfetch.neofetch_util import term_size
+from norfetch.color_util import printc, color
+from norfetch.neofetch_util import term_size
 
 
 @dataclass

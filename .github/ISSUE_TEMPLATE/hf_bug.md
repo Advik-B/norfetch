@@ -1,8 +1,8 @@
 ---
-name: HyFetch Bug Report
+name: norfetch Bug Report
 about: Create a report for coloring related bugs.
 title: ''
-labels: 'hyfetch'
+labels: 'norfetch'
 assignees: ''
 
 ---
@@ -22,7 +22,7 @@ If applicable, add screenshots to help explain your problem.
 
 ### Config file
 
-Please paste the content of `~/.config/hyfetch.json` below:
+Please paste the content of `~/.config/norfetch.json` below:
 
 ```json
 "(here)"

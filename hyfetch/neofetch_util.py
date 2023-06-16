@@ -251,7 +251,7 @@ def ensure_git_bash() -> Path:
             return path / r'bin\bash.exe'
 
         # No installation found, download a portable installation
-        print('Git installation not found. Git is required to use HyFetch/neofetch on Windows')
+        print('Git installation not found. Git is required to use norfetch/neofetch on Windows')
         if literal_input('Would you like to install a minimal package for Git? (if no is selected colors almost certianly won\'t work)', ['yes', 'no'], 'yes', False) == 'yes':
             print('Downloading a minimal portable package for Git...')
             from urllib.request import urlretrieve
@@ -275,7 +275,7 @@ def check_windows_cmd():
         # TODO: This line does not correctly identify cmd prompts...
         if psutil.Process(os.getppid()).name().lower().strip() == 'cmd.exe':
             print("cmd.exe doesn't support RGB colors, restarting in MinTTY...")
-            cmd = f'"{ensure_git_bash().parent.parent / "usr/bin/mintty.exe"}" -s 110,40 -e python -m hyfetch --ask-exit'
+            cmd = f'"{ensure_git_bash().parent.parent / "usr/bin/mintty.exe"}" -s 110,40 -e python -m norfetch --ask-exit'
             os.system(cmd)
             sys.exit(0)
 

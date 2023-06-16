@@ -1,7 +1,7 @@
-from hyfetch.color_scale import test_color_scale
-from hyfetch.color_util import RGB, printc
-from hyfetch.neofetch_util import get_command_path
-from hyfetch.presets import PRESETS
+from norfetch.color_scale import test_color_scale
+from norfetch.color_util import RGB, printc
+from norfetch.neofetch_util import get_command_path
+from norfetch.presets import PRESETS
 
 
 def print_colors_test(colors: list[RGB]):

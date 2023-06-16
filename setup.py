@@ -3,7 +3,7 @@ import pathlib
 
 from setuptools import setup, find_namespace_packages
 
-from hyfetch.__version__ import VERSION
+from norfetch.__version__ import VERSION
 
 # The directory containing this file
 HERE = pathlib.Path(__file__).parent
@@ -13,12 +13,12 @@ README = (HERE / "README.md").read_text('utf-8')
 
 # This call to setup() does all the work
 setup(
-    name="HyFetch",
+    name="norfetch",
     version=VERSION,
     description="neofetch with flags <3",
     long_description=README,
     long_description_content_type="text/markdown",
-    url="https://github.com/hykilpikonna/HyFetch",
+    url="https://github.com/hykilpikonna/norfetch",
     author="Azalea Gui",
     author_email="me@hydev.org",
     license="MIT",
@@ -32,7 +32,7 @@ setup(
         "Programming Language :: Python :: 3.11",
     ],
     packages=find_namespace_packages(),
-    package_data={'hyfetch': ['hyfetch/*']},
+    package_data={'norfetch': ['norfetch/*']},
     include_package_data=True,
     install_requires=[
         # Universal dependencies
@@ -44,8 +44,8 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "hyfetch=hyfetch.main:run",
+            "norfetch=norfetch.main:run",
         ]
     },
-    scripts=['hyfetch/scripts/neowofetch']
+    scripts=['norfetch/scripts/neowofetch']
 )

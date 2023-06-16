@@ -22,7 +22,7 @@ def pre_check():
     """
     assert os.path.isfile('./neofetch'), './neofetch doesn\'t exist, you are running this script in the wrong directory'
     assert os.stat('./neofetch').st_mode & stat.S_IEXEC, 'neofetch is not executable'
-    assert os.path.islink('./hyfetch/scripts/neowofetch'), 'neowofetch is not a symbolic link'
+    assert os.path.islink('./norfetch/scripts/neowofetch'), 'neowofetch is not a symbolic link'
     # subprocess.check_call(shlex.split('git diff-index --quiet HEAD --'))  # 'Please commit all changes before release'
 
     print('Running shellcheck... (This may take a while)')
@@ -31,7 +31,7 @@ def pre_check():
 
 def edit_versions(version: str):
     """
-    Edit version numbers in hyfetch/constants.py, package.json, and README.md
+    Edit version numbers in norfetch/constants.py, package.json, and README.md
 
     Also edits version number of neofetch, but the neofetch version number is separate.
 
@@ -46,9 +46,9 @@ def edit_versions(version: str):
     content['version'] = version
     path.write_text(json.dumps(content, ensure_ascii=False, indent=2))
 
-    # 2. hyfetch/constants.py
-    print('Editing hyfetch/__version__.py...')
-    path = Path('hyfetch/__version__.py')
+    # 2. norfetch/constants.py
+    print('Editing norfetch/__version__.py...')
+    path = Path('norfetch/__version__.py')
     content = [f"VERSION = '{version}'" if l.startswith('VERSION = ') else l for l in path.read_text().split('\n')]
     path.write_text('\n'.join(content))
 
@@ -114,8 +114,8 @@ def create_release(v: str):
     print('Committing changes...')
 
     # 1. Add files
-    subprocess.check_call(['git', 'add', 'hyfetch/__version__.py', 'neofetch', 'neofetch.1', 'package.json', 'README.md',
-                           'hyfetch/distros/*'])
+    subprocess.check_call(['git', 'add', 'norfetch/__version__.py', 'neofetch', 'neofetch.1', 'package.json', 'README.md',
+                           'norfetch/distros/*'])
 
     # 2. Commit
     subprocess.check_call(['git', 'commit', '-m', f'[U] Release {v}'])
@@ -148,7 +148,7 @@ def deploy():
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='HyFetch Release Utility')
+    parser = argparse.ArgumentParser(description='norfetch Release Utility')
     parser.add_argument('version', help='Version to release')
 
     args = parser.parse_args()

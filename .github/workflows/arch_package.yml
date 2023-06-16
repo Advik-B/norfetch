@@ -29,28 +29,28 @@ jobs:
     - name: Clone from AUR
       run:  |
             export GIT_SSH_COMMAND='ssh -i ~/.ssh/id_rsa'
-            git clone ssh://aur@aur.archlinux.org/hyfetch.git
+            git clone ssh://aur@aur.archlinux.org/norfetch.git
 
     - name: Upgrade PKGBUILD
       run:  |
-            cd hyfetch
+            cd norfetch
             sed -i "/^pkgver=/cpkgver=${{github.ref_name}}" PKGBUILD
             sed -i "/^pkgrel=/cpkgrel=1" PKGBUILD
 
     - name: Makepkg
       run:  |
-            cd hyfetch
+            cd norfetch
             yes | makepkg -si
 
-    - name: Test hyfetch
+    - name: Test norfetch
       run:  |
-            hyfetch --test-print
+            norfetch --test-print
 
     - name: Upload binaries to release
       uses: shogo82148/actions-upload-release-asset@v1
       with:
         upload_url: ${{ github.event.release.upload_url }}
-        asset_path: hyfetch/hyfetch*.pkg.tar.*
+        asset_path: norfetch/norfetch*.pkg.tar.*
 
     - name: set git info
       run:  |
@@ -59,7 +59,7 @@ jobs:
 
     - name: Update PKGBUILD to AUR
       run:  |
-            cd hyfetch
+            cd norfetch
             rm -r .SRCINFO && makepkg --printsrcinfo >.SRCINFO
             git stage . && git commit -m "BOT: upgrade to ${{github.ref_name}}"
             export GIT_SSH_COMMAND='ssh -i ~/.ssh/id_rsa'

@@ -19,7 +19,7 @@ from hypy_utils import write, json_stringify
 from hypy_utils.logging_utils import setup_logger
 from openai.openai_object import OpenAIObject
 
-from hyfetch.color_util import printc
+from norfetch.color_util import printc
 
 log = setup_logger()
 

@@ -13,11 +13,11 @@ def copy_comment():
     comment = f"""
 Thank you for reporting the issue!
 
-This issue is [fixed in hyfetch by commit {sha}](https://github.com/hykilpikonna/hyfetch/commit/{sha}). This repo (dylanaraps/neofetch) seems to be no longer maintained.
+This issue is [fixed in norfetch by commit {sha}](https://github.com/hykilpikonna/norfetch/commit/{sha}). This repo (dylanaraps/neofetch) seems to be no longer maintained.
 
-[HyFetch](https://github.com/hykilpikonna/hyfetch) is a fork of neofetch with LGBTQ pride flags, but the repo also maintains an updated version of the original neofetch, addressing many issues and pull requests.
+[norfetch](https://github.com/hykilpikonna/norfetch) is a fork of neofetch with LGBTQ pride flags, but the repo also maintains an updated version of the original neofetch, addressing many issues and pull requests.
 
-Read the ["Running Updated Original Neofetch" section](https://github.com/hykilpikonna/hyfetch#running-updated-original-neofetch) for more info!
+Read the ["Running Updated Original Neofetch" section](https://github.com/hykilpikonna/norfetch#running-updated-original-neofetch) for more info!
     """
     pyperclip.copy(comment.strip())
     print()

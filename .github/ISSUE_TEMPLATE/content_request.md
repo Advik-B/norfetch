@@ -8,7 +8,7 @@ assignees: ''
 ---
 
 ### Describe the content
-Describe the content you would like to see added to HyFetch.
+Describe the content you would like to see added to norfetch.
 
 ### Links
 Please include relevant links to the content.

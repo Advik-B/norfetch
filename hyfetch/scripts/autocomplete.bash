@@ -2,26 +2,26 @@
 
 
 
-_shtab_hyfetch_option_strings=('-h' '--help' '-c' '--config' '-C' '--config-file' '-p' '--preset' '-m' '--mode' '-b' '--backend' '--c-scale' '--c-set-l' '-V' '--version' '--debug' '--distro' '--test-distro' '--ascii-file')
+_shtab_norfetch_option_strings=('-h' '--help' '-c' '--config' '-C' '--config-file' '-p' '--preset' '-m' '--mode' '-b' '--backend' '--c-scale' '--c-set-l' '-V' '--version' '--debug' '--distro' '--test-distro' '--ascii-file')
 
 
 
-_shtab_hyfetch__p_choices=('rainbow' 'transgender' 'nonbinary' 'agender' 'queer' 'genderfluid' 'bisexual' 'pansexual' 'polysexual' 'omnisexual' 'omniromantic' 'gay-men' 'lesbian' 'abrosexual' 'asexual' 'aromantic' 'aroace1' 'aroace2' 'aroace3' 'autosexual' 'intergender' 'greygender' 'akiosexual' 'bigender' 'demigender' 'demiboy' 'demigirl' 'transmasculine' 'transfeminine' 'genderfaun' 'demifaun' 'genderfae' 'demifae' 'neutrois' 'biromantic1' 'biromantic2' 'autoromantic' 'boyflux2' 'finsexual' 'unlabeled1' 'unlabeled2' 'pangender' 'gendernonconforming1' 'gendernonconforming2' 'femboy' 'tomboy' 'gendervoid' 'voidgirl' 'voidboy' 'beiyang' 'burger')
-_shtab_hyfetch___preset_choices=('rainbow' 'transgender' 'nonbinary' 'agender' 'queer' 'genderfluid' 'bisexual' 'pansexual' 'polysexual' 'omnisexual' 'omniromantic' 'gay-men' 'lesbian' 'abrosexual' 'asexual' 'aromantic' 'aroace1' 'aroace2' 'aroace3' 'autosexual' 'intergender' 'greygender' 'akiosexual' 'bigender' 'demigender' 'demiboy' 'demigirl' 'transmasculine' 'transfeminine' 'genderfaun' 'demifaun' 'genderfae' 'demifae' 'neutrois' 'biromantic1' 'biromantic2' 'autoromantic' 'boyflux2' 'finsexual' 'unlabeled1' 'unlabeled2' 'pangender' 'gendernonconforming1' 'gendernonconforming2' 'femboy' 'tomboy' 'gendervoid' 'voidgirl' 'voidboy' 'beiyang' 'burger')
-_shtab_hyfetch__m_choices=('8bit' 'rgb')
-_shtab_hyfetch___mode_choices=('8bit' 'rgb')
-_shtab_hyfetch__b_choices=('neofetch' 'fastfetch' 'fastfetch-old')
-_shtab_hyfetch___backend_choices=('neofetch' 'fastfetch' 'fastfetch-old')
+_shtab_norfetch__p_choices=('rainbow' 'transgender' 'nonbinary' 'agender' 'queer' 'genderfluid' 'bisexual' 'pansexual' 'polysexual' 'omnisexual' 'omniromantic' 'gay-men' 'lesbian' 'abrosexual' 'asexual' 'aromantic' 'aroace1' 'aroace2' 'aroace3' 'autosexual' 'intergender' 'greygender' 'akiosexual' 'bigender' 'demigender' 'demiboy' 'demigirl' 'transmasculine' 'transfeminine' 'genderfaun' 'demifaun' 'genderfae' 'demifae' 'neutrois' 'biromantic1' 'biromantic2' 'autoromantic' 'boyflux2' 'finsexual' 'unlabeled1' 'unlabeled2' 'pangender' 'gendernonconforming1' 'gendernonconforming2' 'femboy' 'tomboy' 'gendervoid' 'voidgirl' 'voidboy' 'beiyang' 'burger')
+_shtab_norfetch___preset_choices=('rainbow' 'transgender' 'nonbinary' 'agender' 'queer' 'genderfluid' 'bisexual' 'pansexual' 'polysexual' 'omnisexual' 'omniromantic' 'gay-men' 'lesbian' 'abrosexual' 'asexual' 'aromantic' 'aroace1' 'aroace2' 'aroace3' 'autosexual' 'intergender' 'greygender' 'akiosexual' 'bigender' 'demigender' 'demiboy' 'demigirl' 'transmasculine' 'transfeminine' 'genderfaun' 'demifaun' 'genderfae' 'demifae' 'neutrois' 'biromantic1' 'biromantic2' 'autoromantic' 'boyflux2' 'finsexual' 'unlabeled1' 'unlabeled2' 'pangender' 'gendernonconforming1' 'gendernonconforming2' 'femboy' 'tomboy' 'gendervoid' 'voidgirl' 'voidboy' 'beiyang' 'burger')
+_shtab_norfetch__m_choices=('8bit' 'rgb')
+_shtab_norfetch___mode_choices=('8bit' 'rgb')
+_shtab_norfetch__b_choices=('neofetch' 'fastfetch' 'fastfetch-old')
+_shtab_norfetch___backend_choices=('neofetch' 'fastfetch' 'fastfetch-old')
 
-_shtab_hyfetch__h_nargs=0
-_shtab_hyfetch___help_nargs=0
-_shtab_hyfetch__c_nargs=0
-_shtab_hyfetch___config_nargs=0
-_shtab_hyfetch__V_nargs=0
-_shtab_hyfetch___version_nargs=0
-_shtab_hyfetch___debug_nargs=0
-_shtab_hyfetch___test_print_nargs=0
-_shtab_hyfetch___ask_exit_nargs=0
+_shtab_norfetch__h_nargs=0
+_shtab_norfetch___help_nargs=0
+_shtab_norfetch__c_nargs=0
+_shtab_norfetch___config_nargs=0
+_shtab_norfetch__V_nargs=0
+_shtab_norfetch___version_nargs=0
+_shtab_norfetch___debug_nargs=0
+_shtab_norfetch___test_print_nargs=0
+_shtab_norfetch___ask_exit_nargs=0
 
 
 # $1=COMP_WORDS[1]
@@ -83,11 +83,11 @@ _set_new_action() {
 #     hello="world"
 #     x="hello"
 #     ${!x} -> ${hello} -> "world"
-_shtab_hyfetch() {
+_shtab_norfetch() {
   local completing_word="${COMP_WORDS[COMP_CWORD]}"
   COMPREPLY=()
 
-  prefix=_shtab_hyfetch
+  prefix=_shtab_norfetch
   word_index=0
   _set_parser_defaults
   word_index=1
@@ -139,4 +139,4 @@ _shtab_hyfetch() {
   return 0
 }
 
-complete -o filenames -F _shtab_hyfetch hyfetch
+complete -o filenames -F _shtab_norfetch norfetch

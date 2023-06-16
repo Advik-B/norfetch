@@ -46,7 +46,7 @@ def create_config() -> Config:
 
     asc = get_distro_ascii()
     asc_width, asc_lines = ascii_size(asc)
-    logo = color("&l&bhyfetch&~&L" if det_bg is None or det_bg.is_light() else "&l&bhy&ffetch&~&L")
+    logo = color("&l&bnorfetch&~&L" if det_bg is None or det_bg.is_light() else "&l&bhy&ffetch&~&L")
     title = f'Welcome to {logo} Let\'s set up some colors first.'
     clear_screen(title)
 
@@ -301,10 +301,10 @@ def create_config() -> Config:
 
 def create_parser() -> argparse.ArgumentParser:
     # Create CLI
-    hyfetch = color('&l&bhyfetch&~&L')
-    parser = argparse.ArgumentParser(description=color(f'{hyfetch} - neofetch with flags <3'), prog="hyfetch")
+    norfetch = color('&l&bnorfetch&~&L')
+    parser = argparse.ArgumentParser(description=color(f'{norfetch} - neofetch with flags <3'), prog="norfetch")
 
-    parser.add_argument('-c', '--config', action='store_true', help=color(f'Configure hyfetch'))
+    parser.add_argument('-c', '--config', action='store_true', help=color(f'Configure norfetch'))
     parser.add_argument('-C', '--config-file', dest='config_file', default=CONFIG_PATH, help=f'Use another config file')
     parser.add_argument('-p', '--preset', help=f'Use preset', choices=list(PRESETS.keys()))
     parser.add_argument('-m', '--mode', help=f'Color mode', choices=['8bit', 'rgb'])
@@ -384,7 +384,7 @@ def run():
         pride_month.start_animation()
         print()
         print("Happy pride month!")
-        print("(You can always view the animation again with `hyfetch --june`)")
+        print("(You can always view the animation again with `norfetch --june`)")
         print()
 
         if not june_path.is_file():

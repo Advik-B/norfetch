@@ -1,4 +1,4 @@
-# HyFetch
+# norfetch
 
 neofetch with pride flags <3
 
@@ -8,7 +8,7 @@ neofetch with pride flags <3
 
 This repo also serves as an updated version of the original `neofetch` since the upstream [dylanaraps/neofetch](https://github.com/dylanaraps/neofetch) doesn't seem to be maintained anymore (as of Jul 30, 2022, the original repo hasn't merged a pull request for 6 months). If you only want to use the updated neofetch without pride flags, you can use the `neofetch` script from this repo. To prevent command name conflict, I call it `neowofetch` :)
 
-* Method 1: `pip install hyfetch` then run `neowofetch`
+* Method 1: `pip install norfetch` then run `neowofetch`
 * Method 2: `npx neowofetch`
 * Method 3: `P="$HOME/.local/bin/neowofetch" curl -L nf.hydev.org -o $P && chmod +x $P`
 * Method 4: Run without install `bash <(curl -sL nf.hydev.org)`
@@ -21,18 +21,18 @@ This repo also serves as an updated version of the original `neofetch` since the
 Install Python >= 3.7 first. Then, just do:
 
 ```sh
-pip install hyfetch
+pip install norfetch
 ```
 
 ### Method 2: Install using system package manager
 
-Currently, these distributions have existing packages for HyFetch:
+Currently, these distributions have existing packages for norfetch:
 
-* Arch Linux: `sudo pacman -S hyfetch` (Thanks to [@Aleksana](https://github.com/Aleksanaa) and [@Antiz96](https://github.com/Antiz96))
-* Nix: `nix-env -i hyfetch` (Thanks to [@YisuiDenghua](https://github.com/YisuiDenghua))
-* Guix: `guix install hyfetch` (Thanks to [@WammKD](https://github.com/WammKD))
-* Slackware `sbopkg -b hyfetch` Slackware [Slackbuild](https://slackbuilds.org/repository/15.0/desktop/hyfetch/?search=hyfetch) (Thanks to [@bittin](https://github.com/bittin) and Urchlay)
-* Nix Profile `nix profile install nixpkgs#hyfetch`
+* Arch Linux: `sudo pacman -S norfetch` (Thanks to [@Aleksana](https://github.com/Aleksanaa) and [@Antiz96](https://github.com/Antiz96))
+* Nix: `nix-env -i norfetch` (Thanks to [@YisuiDenghua](https://github.com/YisuiDenghua))
+* Guix: `guix install norfetch` (Thanks to [@WammKD](https://github.com/WammKD))
+* Slackware `sbopkg -b norfetch` Slackware [Slackbuild](https://slackbuilds.org/repository/15.0/desktop/norfetch/?search=norfetch) (Thanks to [@bittin](https://github.com/bittin) and Urchlay)
+* Nix Profile `nix profile install nixpkgs#norfetch`
 
 
 ### Method 3: Install the latest developmental version using git
@@ -40,24 +40,24 @@ Currently, these distributions have existing packages for HyFetch:
 Install Python >= 3.7 first. Then run the following commands:
 
 ```sh
-git clone https://github.com/hykilpikonna/hyfetch.git
-cd hyfetch
+git clone https://github.com/hykilpikonna/norfetch.git
+cd norfetch
 pip install .
 ```
 
 
 ## Usage
 
-When you run `hyfetch` for the first time, it will prompt you to choose a color system and a preset. Just follow the prompt, and everything should work (hopefully). If something doesn't work, feel free to submit an issue!
+When you run `norfetch` for the first time, it will prompt you to choose a color system and a preset. Just follow the prompt, and everything should work (hopefully). If something doesn't work, feel free to submit an issue!
 
-If you want to use the updated `neofetch` without LGBTQ flags, check out [this section](https://github.com/hykilpikonna/hyfetch#running-updated-original-neofetch)
+If you want to use the updated `neofetch` without LGBTQ flags, check out [this section](https://github.com/hykilpikonna/norfetch#running-updated-original-neofetch)
 
 
 ## Questions and answers
 
 #### Q: How do I change my config?
 
-A: Use `hyfetch -c`
+A: Use `norfetch -c`
 
 #### Q: What do I do if the color is too dark/light for my theme?
 
@@ -70,9 +70,9 @@ Feel free to experiment with it!
 
 ## Contributing
 
-To make changes to our codebase, you first need to create a fork by clicking the "Fork" button on the top right. Then, you can clone your fork of the source code using `git clone https://github.com/{your username}/hyfetch.git`.
+To make changes to our codebase, you first need to create a fork by clicking the "Fork" button on the top right. Then, you can clone your fork of the source code using `git clone https://github.com/{your username}/norfetch.git`.
 
-After making changes to the source code, you can run `python -m hyfetch` in the root directory of your repo to test out your changes.
+After making changes to the source code, you can run `python -m norfetch` in the root directory of your repo to test out your changes.
 
 If they work correctly, you can commit and push these changes using git command or Github Desktop. Then, you can create a pull request on Github so that it can go into our next release!
 
@@ -83,7 +83,7 @@ You can also install your version locally by running `pip install .` in the repo
 
 ### About Notation
 
-Updates to HyFetch begins with the emoji 🌈  
+Updates to norfetch begins with the emoji 🌈  
 Updates to `neowofetch` begins with the emoji 🖼️
 
 ### TODO
@@ -96,7 +96,7 @@ Updates to `neowofetch` begins with the emoji 🖼️
 Note: You can install the latest nightly version by using:
 
 ```sh
-pip install git+https://github.com/hykilpikonna/hyfetch.git@master
+pip install git+https://github.com/hykilpikonna/norfetch.git@master
 ```
 
 <!-- CHANGELOG STARTS HERE --->
@@ -104,73 +104,73 @@ pip install git+https://github.com/hykilpikonna/hyfetch.git@master
 ### 1.4.9
 
 * 🌈 Add pride month easter-egg animation! ⭐️
-* 🌈 Autocompletion for bash, zsh, tcsh ([#96](https://github.com/hykilpikonna/hyfetch/pull/96))
-* 🌈 Add nix profile installation method ([#114](https://github.com/hykilpikonna/hyfetch/pull/114))
+* 🌈 Autocompletion for bash, zsh, tcsh ([#96](https://github.com/hykilpikonna/norfetch/pull/96))
+* 🌈 Add nix profile installation method ([#114](https://github.com/hykilpikonna/norfetch/pull/114))
 * 🌈 Add experimental color overlay function for more accurate lightness adjusting (using `--c-overlay`)
 * 🌈 Allow neofetch argument passthrough (using `--args='...'`)
-* 🌈 Show recommended terminal size ([#129](https://github.com/hykilpikonna/hyfetch/pull/129))
+* 🌈 Show recommended terminal size ([#129](https://github.com/hykilpikonna/norfetch/pull/129))
 * 🌈 Update issue & pull request templates
 * 🖼 Hostname - Fix FQDN substitution
 * 🖼 Version - Fix Windows version detection ([dylanaraps#2309](https://github.com/dylanaraps/neofetch/pull/2309))
-* 🖼 Packages - Fix winget stuck on agreement ([#82](https://github.com/hykilpikonna/hyfetch/pull/82))
-* 🖼 Distro - Fix Windows text encoding ([#115](https://github.com/hykilpikonna/hyfetch/pull/115))
+* 🖼 Packages - Fix winget stuck on agreement ([#82](https://github.com/hykilpikonna/norfetch/pull/82))
+* 🖼 Distro - Fix Windows text encoding ([#115](https://github.com/hykilpikonna/norfetch/pull/115))
 * 🖼 Distro - Add Astra Linux ([dylanaraps#2313](https://github.com/dylanaraps/neofetch/pull/2313))
-* 🖼 Distro - Add FemboyOS ([#121](https://github.com/hykilpikonna/hyfetch/pull/121))
+* 🖼 Distro - Add FemboyOS ([#121](https://github.com/hykilpikonna/norfetch/pull/121))
 * 🖼 Distro - Add Nobara Linux ([dylanaraps#2326](https://github.com/dylanaraps/neofetch/pull/2326))
-* 🖼 Font - Fix Konsole ppid detection ([#116](https://github.com/hykilpikonna/hyfetch/pull/116))
-* 🖼 Font - Fix Konsole terminal font detection ([#127](https://github.com/hykilpikonna/hyfetch/pull/127))
+* 🖼 Font - Fix Konsole ppid detection ([#116](https://github.com/hykilpikonna/norfetch/pull/116))
+* 🖼 Font - Fix Konsole terminal font detection ([#127](https://github.com/hykilpikonna/norfetch/pull/127))
 * 🖼 Image - Optimize sixel image display ([dylanaraps#2316](https://github.com/dylanaraps/neofetch/pull/2316))
 
 ### 1.4.8
 
-* 🌈 Improved Windows git bash detection ([#99](https://github.com/hykilpikonna/hyfetch/pull/99))
-* 🌈 Improved color formatting codes ([#101](https://github.com/hykilpikonna/hyfetch/pull/101))
-* 🌈 Allow specifying distro in config ([#102](https://github.com/hykilpikonna/hyfetch/pull/102))
-* 🌈 Allow specifying custom ascii files ([#104](https://github.com/hykilpikonna/hyfetch/pull/104))
-* 🌈 Add omniromantic and pangender flags ([#106](https://github.com/hykilpikonna/hyfetch/pull/106))
-* 🌈 Now officially packaged for ArchLinux Community & Slackware! ([#112](https://github.com/hykilpikonna/hyfetch/pull/112) | [#109](https://github.com/hykilpikonna/hyfetch/pull/109))
-* 🖼 Host - Update Apple device model detection. ([#111](https://github.com/hykilpikonna/hyfetch/pull/111))
+* 🌈 Improved Windows git bash detection ([#99](https://github.com/hykilpikonna/norfetch/pull/99))
+* 🌈 Improved color formatting codes ([#101](https://github.com/hykilpikonna/norfetch/pull/101))
+* 🌈 Allow specifying distro in config ([#102](https://github.com/hykilpikonna/norfetch/pull/102))
+* 🌈 Allow specifying custom ascii files ([#104](https://github.com/hykilpikonna/norfetch/pull/104))
+* 🌈 Add omniromantic and pangender flags ([#106](https://github.com/hykilpikonna/norfetch/pull/106))
+* 🌈 Now officially packaged for ArchLinux Community & Slackware! ([#112](https://github.com/hykilpikonna/norfetch/pull/112) | [#109](https://github.com/hykilpikonna/norfetch/pull/109))
+* 🖼 Host - Update Apple device model detection. ([#111](https://github.com/hykilpikonna/norfetch/pull/111))
 * 🖼 Distro - Add Salient OS. ([dylanaraps#2301](https://github.com/dylanaraps/neofetch/pull/2301))
-* 🖼 Distro - Add PikaOS. ([#105](https://github.com/hykilpikonna/hyfetch/pull/105))
-* 🖼 Distro - Add Archcraft minimal variant. ([#108](https://github.com/hykilpikonna/hyfetch/pull/108))
-* 🖼 Distro - Update Vanilla logo. ([#98](https://github.com/hykilpikonna/hyfetch/pull/98))
+* 🖼 Distro - Add PikaOS. ([#105](https://github.com/hykilpikonna/norfetch/pull/105))
+* 🖼 Distro - Add Archcraft minimal variant. ([#108](https://github.com/hykilpikonna/norfetch/pull/108))
+* 🖼 Distro - Update Vanilla logo. ([#98](https://github.com/hykilpikonna/norfetch/pull/98))
 * 🖼 Distro - ChromeOS version improvements. ([dylanaraps#2305](https://github.com/dylanaraps/neofetch/pull/2305))
-* 🖼 CPU - Improved multi-cpu ARM chip detection. ([#97](https://github.com/hykilpikonna/hyfetch/pull/97))
-* 🖼 Packages - Support pipx package manager. ([#107](https://github.com/hykilpikonna/hyfetch/pull/107))
+* 🖼 CPU - Improved multi-cpu ARM chip detection. ([#97](https://github.com/hykilpikonna/norfetch/pull/97))
+* 🖼 Packages - Support pipx package manager. ([#107](https://github.com/hykilpikonna/norfetch/pull/107))
 
 ### 1.4.7
 
-* 🌈 Better Windows compatibility ([#45](https://github.com/hykilpikonna/hyfetch/pull/45), [#84](https://github.com/hykilpikonna/hyfetch/pull/84), [#87](https://github.com/hykilpikonna/hyfetch/pull/87), [#89](https://github.com/hykilpikonna/hyfetch/pull/89))
-* 🌈 Add gendervoid flags ([#81](https://github.com/hykilpikonna/hyfetch/pull/81))
-* 🌈 Fix ASCII extractor escape sequence generation ([#90](https://github.com/hykilpikonna/hyfetch/pull/90), [#91](https://github.com/hykilpikonna/hyfetch/pull/91))
+* 🌈 Better Windows compatibility ([#45](https://github.com/hykilpikonna/norfetch/pull/45), [#84](https://github.com/hykilpikonna/norfetch/pull/84), [#87](https://github.com/hykilpikonna/norfetch/pull/87), [#89](https://github.com/hykilpikonna/norfetch/pull/89))
+* 🌈 Add gendervoid flags ([#81](https://github.com/hykilpikonna/norfetch/pull/81))
+* 🌈 Fix ASCII extractor escape sequence generation ([#90](https://github.com/hykilpikonna/norfetch/pull/90), [#91](https://github.com/hykilpikonna/norfetch/pull/91))
 * 🖼 Distro - Add CuteOS ([dylanaraps#2291](https://github.com/dylanaraps/neofetch/pull/2291))
 * 🖼 Distro - Add Floflis ([dylanaraps#2289](https://github.com/dylanaraps/neofetch/pull/2289))
 * 🖼 Distro - Add ArseLinux ([dylanaraps#2295](https://github.com/dylanaraps/neofetch/pull/2295))
 * 🖼 Distro - Better Solaris support ([dylanaraps#2293](https://github.com/dylanaraps/neofetch/pull/2293))
-* 🖼 Packages - Fix scoop package manager for Windows ([#93](https://github.com/hykilpikonna/hyfetch/pull/93))
-* 🖼 Packages - Add Evox package manager for Stock Linux ([#95](https://github.com/hykilpikonna/hyfetch/pull/95))
-* 🖼 WM - Fix false positive wm process name detection ([#88](https://github.com/hykilpikonna/hyfetch/pull/88), [#94](https://github.com/hykilpikonna/hyfetch/pull/94))
+* 🖼 Packages - Fix scoop package manager for Windows ([#93](https://github.com/hykilpikonna/norfetch/pull/93))
+* 🖼 Packages - Add Evox package manager for Stock Linux ([#95](https://github.com/hykilpikonna/norfetch/pull/95))
+* 🖼 WM - Fix false positive wm process name detection ([#88](https://github.com/hykilpikonna/norfetch/pull/88), [#94](https://github.com/hykilpikonna/norfetch/pull/94))
 * 🖼 Misc - Added BIOS and bluetooth detection
 
 ### 1.4.6
 
-* 🌈 Add compatibility for FastFetch version `>1.8.0` ([#62](https://github.com/hykilpikonna/hyfetch/pull/62))
-* 🖼 Distro - Add Aperture Science ascii art ([#61](https://github.com/hykilpikonna/hyfetch/pull/61))
+* 🌈 Add compatibility for FastFetch version `>1.8.0` ([#62](https://github.com/hykilpikonna/norfetch/pull/62))
+* 🖼 Distro - Add Aperture Science ascii art ([#61](https://github.com/hykilpikonna/norfetch/pull/61))
 * 🖼 Distro - Add RhaymOS ([dylanaraps#2274](https://github.com/dylanaraps/neofetch/pull/2274))
 * 🖼 Editor - Add editor information detection ([dylanaraps#2271](https://github.com/dylanaraps/neofetch/pull/2271))
-* 🖼 Packages - Fix empty cargo directory ([#58](https://github.com/hykilpikonna/hyfetch/pull/58))
+* 🖼 Packages - Fix empty cargo directory ([#58](https://github.com/hykilpikonna/norfetch/pull/58))
 * 🖼 Terminal - Display gnome-console instead of kgx ([dylanaraps#2277](https://github.com/dylanaraps/neofetch/pull/2277))
 * 🖼 Terminal - Fix terminal detection with new get_process_name function
-* 🖼 CPU - Detect ISA string on RISC-V CPUs ([#60](https://github.com/hykilpikonna/hyfetch/pull/60))
-* 🖼 Song - Fix CMUS player song detection on macOS ([#55](https://github.com/hykilpikonna/hyfetch/pull/55))
-* 🖼 Network - Fix macOS network detection ([#56](https://github.com/hykilpikonna/hyfetch/pull/56))
-* 🖼 Misc - Change LICENSE year to 2023 ([#59](https://github.com/hykilpikonna/hyfetch/pull/59))
+* 🖼 CPU - Detect ISA string on RISC-V CPUs ([#60](https://github.com/hykilpikonna/norfetch/pull/60))
+* 🖼 Song - Fix CMUS player song detection on macOS ([#55](https://github.com/hykilpikonna/norfetch/pull/55))
+* 🖼 Network - Fix macOS network detection ([#56](https://github.com/hykilpikonna/norfetch/pull/56))
+* 🖼 Misc - Change LICENSE year to 2023 ([#59](https://github.com/hykilpikonna/norfetch/pull/59))
 
 ### 1.4.5
 
-* 🌈 **Support using FastFetch as a HyFetch backend** (`hyfetch -b fastfetch`)
-* 🌈 Add config file argument ([#48](https://github.com/hykilpikonna/hyfetch/pull/48))
-* 🌈 Fix problems caused by color detection on Windows ([#16](https://github.com/hykilpikonna/hyfetch/pull/16))
+* 🌈 **Support using FastFetch as a norfetch backend** (`norfetch -b fastfetch`)
+* 🌈 Add config file argument ([#48](https://github.com/hykilpikonna/norfetch/pull/48))
+* 🌈 Fix problems caused by color detection on Windows ([#16](https://github.com/hykilpikonna/norfetch/pull/16))
 * 🌈 Support pure-python distro detection for FastFetch
 * 🖼️ Distro - Add Aster Linux ([dylanaraps#2251](https://github.com/dylanaraps/neofetch/pull/2251))
 * 🖼️ Distro - Add Hybrid Linux ([dylanaraps#2239](https://github.com/dylanaraps/neofetch/pull/2239))
@@ -178,21 +178,21 @@ pip install git+https://github.com/hykilpikonna/hyfetch.git@master
 * 🖼️ Distro - Add Project Sasanqua ([dylanaraps#2264](https://github.com/dylanaraps/neofetch/pull/2264))
 * 🖼️ Distro - Add Kali small variant ([dylanaraps#2242](https://github.com/dylanaraps/neofetch/pull/2242))
 * 🖼️ Distro - Fix CachyOS matching ([dylanaraps#2026](https://github.com/dylanaraps/neofetch/pull/2026))
-* 🖼 WM - Fix wm detection with `fuser` ([#39](https://github.com/hykilpikonna/hyfetch/pull/39))
-* 🖼️ Memory - Make memory unit decimal calculation more accurate ([#52](https://github.com/hykilpikonna/hyfetch/pull/52))
-* 🖼 Packages - Fix squirrel (Stock Linux) package count detection ([#39](https://github.com/hykilpikonna/hyfetch/pull/39))
-* 🖼 Packages - Support cargo bin environment variable ([#49](https://github.com/hykilpikonna/hyfetch/pull/49))
+* 🖼 WM - Fix wm detection with `fuser` ([#39](https://github.com/hykilpikonna/norfetch/pull/39))
+* 🖼️ Memory - Make memory unit decimal calculation more accurate ([#52](https://github.com/hykilpikonna/norfetch/pull/52))
+* 🖼 Packages - Fix squirrel (Stock Linux) package count detection ([#39](https://github.com/hykilpikonna/norfetch/pull/39))
+* 🖼 Packages - Support cargo bin environment variable ([#49](https://github.com/hykilpikonna/norfetch/pull/49))
 * 🖼 Packages - Add tea.xyz package manager (issue [dylanaraps#2235](https://github.com/dylanaraps/neofetch/pull/2235))
 
 ### 1.4.4
 
-* 🌈 Fix Python 3.11 compatibility ([#35](https://github.com/hykilpikonna/hyfetch/pull/35))
+* 🌈 Fix Python 3.11 compatibility ([#35](https://github.com/hykilpikonna/norfetch/pull/35))
 * 🌈 Fix many overflow problems when screen is too small 
 * 🖼️ Distro - Add Enso ([dylanaraps#2233](https://github.com/dylanaraps/neofetch/pull/2233))
 * 🖼️ Memory - Optimize and fix memory unit conversion ([dylanaraps#2225](https://github.com/dylanaraps/neofetch/pull/2225))
 * 🖼️ DE - Add dwl window manager ([dylanaraps#2234](https://github.com/dylanaraps/neofetch/pull/2234))
 * 🖼️ DE - Fix XDG session detection for X11 ([dylanaraps#2232](https://github.com/dylanaraps/neofetch/pull/2232))
-* 🖼️ CPU - Fix model detection for loongson ([#34](https://github.com/hykilpikonna/hyfetch/pull/34))
+* 🖼️ CPU - Fix model detection for loongson ([#34](https://github.com/hykilpikonna/norfetch/pull/34))
 
 ### 1.4.3
 
@@ -200,40 +200,40 @@ pip install git+https://github.com/hykilpikonna/hyfetch.git@master
 * 🌈 **Optimize experience on light-themed terminals**
 * 🌈 Fix bugs with lightness and light-mode config not applying
 * 🌈 Fix color alignment for distros with first color ≠ `${c1}` (e.g. Ubuntu Budgie)
-* 🌈 Add unlabeled flags ([#25](https://github.com/hykilpikonna/hyfetch/pull/25))
-* 🌈 Add gender nonconforming & femboy & tomboy flags ([#32](https://github.com/hykilpikonna/hyfetch/pull/32))
+* 🌈 Add unlabeled flags ([#25](https://github.com/hykilpikonna/norfetch/pull/25))
+* 🌈 Add gender nonconforming & femboy & tomboy flags ([#32](https://github.com/hykilpikonna/norfetch/pull/32))
 * 🌈 Fix jailbreak iOS shell `killed: 9` issue caused by ld signature check.
 * 🖼️ Distro - Add garuda_small ([dylanaraps#2215](https://github.com/dylanaraps/neofetch/pull/2215))
 * 🖼️ Distro - Add Cobalt Linux ([dylanaraps#2213](https://github.com/dylanaraps/neofetch/pull/2213))
 * 🖼️ Distro - Add VanillaOS ([dylanaraps#2222](https://github.com/dylanaraps/neofetch/pull/2222))
-* 🖼️ Distro - Surround macOS build number in parentheses ([#28](https://github.com/hykilpikonna/hyfetch/pull/28))
-* 🖼️ Misc - Auto select stdout mode based on tty detection ([#31](https://github.com/hykilpikonna/hyfetch/pull/31))
-* 🖼️ Bug Fix - Fix cols coloring reset for bash 3.2 ([#24](https://github.com/hykilpikonna/hyfetch/pull/24))
+* 🖼️ Distro - Surround macOS build number in parentheses ([#28](https://github.com/hykilpikonna/norfetch/pull/28))
+* 🖼️ Misc - Auto select stdout mode based on tty detection ([#31](https://github.com/hykilpikonna/norfetch/pull/31))
+* 🖼️ Bug Fix - Fix cols coloring reset for bash 3.2 ([#24](https://github.com/hykilpikonna/norfetch/pull/24))
 
 ### 1.4.2
 
-* 🌈 Detailed runnning/contributing instructions in README.md ([#21](https://github.com/hykilpikonna/hyfetch/pull/21))
-* 🖼️ Distro - Add Stock Linux ([#23](https://github.com/hykilpikonna/hyfetch/pull/23))
+* 🌈 Detailed runnning/contributing instructions in README.md ([#21](https://github.com/hykilpikonna/norfetch/pull/21))
+* 🖼️ Distro - Add Stock Linux ([#23](https://github.com/hykilpikonna/norfetch/pull/23))
 * 🖼️ Distro - Add DietPi ([dylanaraps#1706](https://github.com/dylanaraps/neofetch/pull/1706))
 * 🖼️ Distro - Add OmniOS illumos ([dylanaraps#2196](https://github.com/dylanaraps/neofetch/pull/2196))
 * 🖼️ Distro - Add Droidian ([dylanaraps#2201](https://github.com/dylanaraps/neofetch/pull/2201))
 * 🖼️ Distro - Add HamoniKR ([dylanaraps#2210](https://github.com/dylanaraps/neofetch/pull/2210))
-* 🖼️ Song - Add support for TIDAL HiFi ([#22](https://github.com/hykilpikonna/hyfetch/pull/22))
+* 🖼️ Song - Add support for TIDAL HiFi ([#22](https://github.com/hykilpikonna/norfetch/pull/22))
 * 🖼️ CPU - Detect multiple CPU models for ARM
 * 🖼️ Misc - Better defaults: Show RAM in GiB, RAM percentage, CPU speed rounding, refresh rate
-* 🖼️ Bug Fix - Fix bash 5.2 column cut off issue ([#24](https://github.com/hykilpikonna/hyfetch/pull/24))
+* 🖼️ Bug Fix - Fix bash 5.2 column cut off issue ([#24](https://github.com/hykilpikonna/norfetch/pull/24))
 
 ### 1.4.1
 
-* 🌈 Paginate flags ([#14](https://github.com/hykilpikonna/hyfetch/pull/14))
-* 🌈 Add release workflow ([#15](https://github.com/hykilpikonna/hyfetch/pull/15))
+* 🌈 Paginate flags ([#14](https://github.com/hykilpikonna/norfetch/pull/14))
+* 🌈 Add release workflow ([#15](https://github.com/hykilpikonna/norfetch/pull/15))
 * 🌈 Create automatic release script
 * 🌈 Config page - Give warning when terminal size is too small
 * 🌈 Config page - Optimize color arrangement selection on small screens
 * 🌈 Add experimental Windows support (very unstable at the moment)
 * 🖼️ Distro - Add ravynOS ([dylanaraps#2182](https://github.com/dylanaraps/neofetch/pull/2182))
 * 🖼️ Distro - Add ChonkySealOS ([dylanaraps#2180](https://github.com/dylanaraps/neofetch/pull/2180))
-* 🖼️ Distro - Add GhostBSD ([TheSudoer#18](https://github.com/hykilpikonna/hyfetch/pull/18))
+* 🖼️ Distro - Add GhostBSD ([TheSudoer#18](https://github.com/hykilpikonna/norfetch/pull/18))
 * 🖼️ Distro - Add NekOS ([dylanaraps#2186](https://github.com/dylanaraps/neofetch/pull/2186))
 * 🖼️ Distro - Add astOS ([dylanaraps#2185](https://github.com/dylanaraps/neofetch/pull/2185))
 * 🖼️ Distro - Fix ChromeOS identification ([dylanaraps#1949](https://github.com/dylanaraps/neofetch/pull/1949))
@@ -247,7 +247,7 @@ pip install git+https://github.com/hykilpikonna/hyfetch.git@master
 
 ### 1.4.0
 
-* 🌈 Add finsexual flag ([#12](https://github.com/hykilpikonna/hyfetch/pull/12))
+* 🌈 Add finsexual flag ([#12](https://github.com/hykilpikonna/norfetch/pull/12))
 * 🚀 Addressed a total of 128 currently open pull requests from neofetch
 
 <details>
@@ -382,8 +382,8 @@ pip install git+https://github.com/hykilpikonna/hyfetch.git@master
 <details>
   <summary>🖼️ Ascii Art Changes</summary>
 
-* Ascii - Add uwuntu ([#9](https://github.com/hykilpikonna/hyfetch/pull/9)) (use it with `hyfetch --test-distro uwuntu` or `neowofetch --ascii_distro uwuntu`)
-* Ascii - Better Void ascii art ([#10](https://github.com/hykilpikonna/hyfetch/pull/10))
+* Ascii - Add uwuntu ([#9](https://github.com/hykilpikonna/norfetch/pull/9)) (use it with `norfetch --test-distro uwuntu` or `neowofetch --ascii_distro uwuntu`)
+* Ascii - Better Void ascii art ([#10](https://github.com/hykilpikonna/norfetch/pull/10))
 * Ascii - Update old NixOS logo for compatibility ([dylanaraps#2114](https://github.com/dylanaraps/neofetch/pull/2114))
 
 </details>
@@ -391,7 +391,7 @@ pip install git+https://github.com/hykilpikonna/hyfetch.git@master
 <details>
   <summary>🖼️ Distro/OS Support Changes</summary>
 
-* OS - Identify macOS 13 Ventura ([#8](https://github.com/hykilpikonna/hyfetch/pull/8))
+* OS - Identify macOS 13 Ventura ([#8](https://github.com/hykilpikonna/norfetch/pull/8))
 * OS - Windows 11 Fluent ([dylanaraps#2109](https://github.com/dylanaraps/neofetch/pull/2109))
 * Distro - Add Asahi Linux ([dylanaraps#2079](https://github.com/dylanaraps/neofetch/pull/2079))
 * Distro - Add CenterOS ([dylanaraps#2097](https://github.com/dylanaraps/neofetch/pull/2097))
@@ -439,7 +439,7 @@ pip install git+https://github.com/hykilpikonna/hyfetch.git@master
 
 ### 1.1.2
 
-* Add more flags ([#5](https://github.com/hykilpikonna/hyfetch/pull/5))
+* Add more flags ([#5](https://github.com/hykilpikonna/norfetch/pull/5))
 * Removed `numpy` dependency that was used in 1.1.0
 
 <img width="200px" src="https://user-images.githubusercontent.com/22280294/180901539-014f036e-c926-4470-ac72-a6d6dcf30672.png" align="right">
@@ -463,11 +463,11 @@ pip install git+https://github.com/hykilpikonna/hyfetch.git@master
 
 ### 1.0.5
 
-* Fix terminal emulator detection ([PR [#2](https://github.com/hykilpikonna/hyfetch/pull/2)](https://github.com/hykilpikonna/hyfetch/pull/2))
+* Fix terminal emulator detection ([PR [#2](https://github.com/hykilpikonna/norfetch/pull/2)](https://github.com/hykilpikonna/norfetch/pull/2))
 
 ### 1.0.4
 
-* Add more flags ([PR [#1](https://github.com/hykilpikonna/hyfetch/pull/1)](https://github.com/hykilpikonna/hyfetch/pull/1))
+* Add more flags ([PR [#1](https://github.com/hykilpikonna/norfetch/pull/1)](https://github.com/hykilpikonna/norfetch/pull/1))
 
 ### 1.0.3
 

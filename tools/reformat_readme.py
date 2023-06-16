@@ -15,7 +15,7 @@ def reformat_readme():
     readme = Path('README.md').read_text()
 
     readme = re.sub(RE_SHORTHAND, r'[\1#\3](https://github.com/\1/\2/pull/\3)', readme)
-    readme = re.sub(MY_RE, r'[#\1](https://github.com/hykilpikonna/hyfetch/pull/\1)', readme)
+    readme = re.sub(MY_RE, r'[#\1](https://github.com/hykilpikonna/norfetch/pull/\1)', readme)
 
     Path('README.md').write_text(readme)
 

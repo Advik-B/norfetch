@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import hyfetch
+import norfetch
 
 if __name__ == '__main__':
-    hyfetch.main.run()
+    norfetch.main.run()

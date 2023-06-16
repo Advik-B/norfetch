@@ -12,7 +12,7 @@ from pathlib import Path
 import regex
 from hypy_utils import write
 
-from hyfetch.distros import AsciiArt
+from norfetch.distros import AsciiArt
 
 RE_SPLIT = regex.compile('EOF[ \n]*?;;')
 RE_COLORS = regex.compile("""(?<=set_colors )[\"#a-z\\d ]+(?=\n)""")
@@ -152,7 +152,7 @@ from . import AsciiArt
 {ascii}
 \""")
     """
-    write(Path(__file__).parent.parent / f'hyfetch/distros/{varname}.py', script)
+    write(Path(__file__).parent.parent / f'norfetch/distros/{varname}.py', script)
 
     # Generate python script for identifying the distro
     return f"""
@@ -177,7 +177,7 @@ def detect(name: str) -> AsciiArt | None:
     name = name.lower()
 """
     py += '\n'.join(export_distro(d).strip('\n') for d in distros)
-    write(Path(__file__).parent.parent / f'hyfetch/distros/distro_detector.py', py)
+    write(Path(__file__).parent.parent / f'norfetch/distros/distro_detector.py', py)
 
 
 if __name__ == '__main__':

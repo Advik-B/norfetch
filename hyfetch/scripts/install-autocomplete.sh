@@ -7,7 +7,7 @@ if [[ "$1" == "uninstall" ]]; then
 else
     echo -n "Installing "
 fi
-echo "autocomplete scripts for HyFetch..."
+echo "autocomplete scripts for norfetch..."
 
 # Stop on error
 set -e
@@ -23,13 +23,13 @@ install-for()
 
     case $shell in
         bash)
-            filename="hyfetch"
+            filename="norfetch"
             ;;
         zsh)
-            filename="_hyfetch"
+            filename="_norfetch"
             ;;
         csh)
-            filename="hyfetch.completion.csh"
+            filename="norfetch.completion.csh"
             ;;
         *)
             echo "Unknown shell: $shell"

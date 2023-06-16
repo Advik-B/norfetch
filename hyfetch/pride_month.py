@@ -1,11 +1,11 @@
 import math
 from time import sleep
 
-from hyfetch import presets
-from hyfetch.color_util import RGB, color, printc
-from hyfetch.constants import IS_WINDOWS
-from hyfetch.neofetch_util import term_size
-from hyfetch.presets import PRESETS
+from norfetch import presets
+from norfetch.color_util import RGB, color, printc
+from norfetch.constants import IS_WINDOWS
+from norfetch.neofetch_util import term_size
+from norfetch.presets import PRESETS
 
 
 def key_pressed():

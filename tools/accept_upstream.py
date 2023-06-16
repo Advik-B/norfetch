@@ -10,7 +10,7 @@ import requests
 from github import Github
 
 upstream = 'dylanaraps/neofetch'
-my_fork = 'hykilpikonna/hyfetch'
+my_fork = 'hykilpikonna/norfetch'
 my_base = 'master'
 
 http = requests.Session()
@@ -27,11 +27,11 @@ def copy_comment():
     comment = f"""
 Thank you for your contribution! 
 
-This PR is [merged into hyfetch](https://github.com/hykilpikonna/hyfetch/commit/{sha}) since this repo (dylanaraps/neofetch) seems no longer maintained.
+This PR is [merged into norfetch](https://github.com/hykilpikonna/norfetch/commit/{sha}) since this repo (dylanaraps/neofetch) seems no longer maintained.
 
-[HyFetch](https://github.com/hykilpikonna/hyfetch) is a fork of neofetch with LGBTQ pride flags, but the repo also maintains an updated version of the original neofetch, addressing many pull requests that are not merged in the original repo.
+[norfetch](https://github.com/hykilpikonna/norfetch) is a fork of neofetch with LGBTQ pride flags, but the repo also maintains an updated version of the original neofetch, addressing many pull requests that are not merged in the original repo.
 
-Read the ["Running Updated Original Neofetch" section](https://github.com/hykilpikonna/hyfetch#running-updated-original-neofetch) for more info!
+Read the ["Running Updated Original Neofetch" section](https://github.com/hykilpikonna/norfetch#running-updated-original-neofetch) for more info!
     """
     pyperclip.copy(comment.strip())
     print()
