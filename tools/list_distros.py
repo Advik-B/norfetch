@@ -24,10 +24,7 @@ def substr(s: str, start: str, end: str | None = None):
     """
     start = s.index(start) + len(start)
 
-    if end is None:
-        return s[start:]
-
-    return s[start:s.index(end, start)]
+    return s[start:] if end is None else s[start:s.index(end, start)]
 
 
 def parse_ascii_distros() -> list[AsciiArt]:
@@ -136,7 +133,7 @@ def export_distro(d: AsciiArt) -> str:
     """
     # Escape variable name
     varname = d.name.lower()
-    for s in string.punctuation + ' ':
+    for s in f'{string.punctuation} ':
         varname = varname.replace(s, '_')
 
     # Escape/unescape ascii
@@ -177,7 +174,7 @@ def detect(name: str) -> AsciiArt | None:
     name = name.lower()
 """
     py += '\n'.join(export_distro(d).strip('\n') for d in distros)
-    write(Path(__file__).parent.parent / f'hyfetch/distros/distro_detector.py', py)
+    write(Path(__file__).parent.parent / 'hyfetch/distros/distro_detector.py', py)
 
 
 if __name__ == '__main__':

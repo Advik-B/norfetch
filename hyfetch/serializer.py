@@ -25,10 +25,7 @@ class EnhancedJSONEncoder(json.JSONEncoder):
 
         # Support for sets
         # https://stackoverflow.com/a/8230505/7346633
-        if isinstance(o, set):
-            return list(o)
-
-        return super().default(o)
+        return list(o) if isinstance(o, set) else super().default(o)
 
 
 def json_stringify(obj: object, indent: int | None = None) -> str:

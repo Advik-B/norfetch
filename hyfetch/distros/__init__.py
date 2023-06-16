@@ -16,5 +16,9 @@ class AsciiArt:
         self.name = name or self.get_friendly_name()
 
     def get_friendly_name(self) -> str:
-        return self.match.split("|")[0].strip(string.punctuation + '* ') \
-            .replace('"', '').replace('*', '')
+        return (
+            self.match.split("|")[0]
+            .strip(f'{string.punctuation}* ')
+            .replace('"', '')
+            .replace('*', '')
+        )

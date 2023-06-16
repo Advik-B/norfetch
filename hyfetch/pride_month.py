@@ -72,7 +72,7 @@ def start_animation():
                 idx = frame + x + y + int(math.sin(y + 0.5 * frame) * 2)
                 y_text = text_start_y <= y < text_end_y
 
-                border = 1 + int(not (y == text_start_y or y == text_end_y - 1))
+                border = 1 + int(y not in [text_start_y, text_end_y - 1])
 
                 # If it's a switching point
                 if idx % block_width == 0 or x == text_start_x - border or x == text_end_x + border \
