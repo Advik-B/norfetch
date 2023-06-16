@@ -42,7 +42,7 @@ harm_classifier_url, harm_classifier_token = config["harm_classifier_url"], conf
 
 script_path = Path(__file__).parent
 supported_events = ["issue_comment", "issues", "pull_request", "pull_request_review_comment"]
-ai_notice = f"If you think this is a false-positive, please contact the owner of this repo."
+ai_notice = "If you think this is a false-positive, please contact the owner of this repo."
 
 openai.organization = config['OpenAI']['org']
 openai.api_key = config['OpenAI']['key']

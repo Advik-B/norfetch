@@ -24,27 +24,24 @@ def unix_detect_ansi_mode() -> AnsiMode | None:
     term = os.environ.get('TERM')
     color_term = os.environ.get('COLORTERM')
 
-    if color_term == 'truecolor' or color_term == '24bit':
+    if color_term in ['truecolor', '24bit']:
         if term.startswith('screen') and os.environ.get('TERM_PROGRAM') != 'tmux':
             return '8bit'
         return 'rgb'
 
-    elif color_term == 'true' or color_term == 'yes':
+    elif color_term in ['true', 'yes']:
         return '8bit'
 
-    if term == 'xterm-kitty':
-        return 'rgb'
-    elif term == 'linux':
+    if term == 'linux':
         return 'ansi'
 
+    elif term == 'xterm-kitty':
+        return 'rgb'
     if '256color' in term:
         return 'rgb'
     if 'color' in term:
         return '8bit'
-    if 'ansi' in term:
-        return 'ansi'
-
-    return None
+    return 'ansi' if 'ansi' in term else None
 
 
 def windows_detect_ansi_mode() -> AnsiMode | None:
@@ -65,25 +62,17 @@ def windows_detect_ansi_mode() -> AnsiMode | None:
         # No ANSI support before Windows 10 build 10586.
         if os.environ.get('ANSICON'):
             conv = os.environ.get('ANSICON_VER')
-            if int(conv) < 181:
-                return 'ansi'
-            return '8bit'
+            return 'ansi' if int(conv) < 181 else '8bit'
         return 'ansi'
 
-    if build < 14931:
-        # No true color support before build 14931.
-        return '8bit'
-
-    return 'rgb'
+    return '8bit' if build < 14931 else 'rgb'
 
 
 def detect_ansi_mode() -> AnsiMode | None:
     system = platform.system().lower()
     if system.startswith("linux") or system.startswith("darwin"):
         return unix_detect_ansi_mode()
-    if system.startswith("windows"):
-        return windows_detect_ansi_mode()
-    return None
+    return windows_detect_ansi_mode() if system.startswith("windows") else None
 
 
 def unix_read_osc(seq: int) -> str:

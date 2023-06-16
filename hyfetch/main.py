@@ -111,8 +111,11 @@ def create_config() -> Config:
             return det_bg.is_light(), 'Detected background color'
 
         clear_screen(title)
-        inp = literal_input(f'2. Is your terminal in &blight mode&~ or &4dark mode&~?',
-                            ['light', 'dark'], 'dark')
+        inp = literal_input(
+            '2. Is your terminal in &blight mode&~ or &4dark mode&~?',
+            ['light', 'dark'],
+            'dark',
+        )
         return inp == 'light', 'Selected background color'
 
     is_light, ttl = select_light_dark()
@@ -265,10 +268,17 @@ def create_config() -> Config:
             print()
 
         print_title_prompt("Let's choose a color arrangement!")
-        printc(f'You can choose standard horizontal or vertical alignment, or use one of the random color schemes.')
+        printc(
+            'You can choose standard horizontal or vertical alignment, or use one of the random color schemes.'
+        )
         print('You can type "roll" to randomize again.')
         print()
-        choice = literal_input(f'Your choice?', ['horizontal', 'vertical', 'roll'] + [f'random{i}' for i in range(random_count)], 'horizontal')
+        choice = literal_input(
+            'Your choice?',
+            ['horizontal', 'vertical', 'roll']
+            + [f'random{i}' for i in range(random_count)],
+            'horizontal',
+        )
 
         if choice == 'roll':
             arrangements = []
@@ -292,7 +302,7 @@ def create_config() -> Config:
 
     # Save config
     print()
-    save = literal_input(f'Save config?', ['y', 'n'], 'y')
+    save = literal_input('Save config?', ['y', 'n'], 'y')
     if save == 'y':
         c.save()
 
@@ -304,20 +314,65 @@ def create_parser() -> argparse.ArgumentParser:
     hyfetch = color('&l&bhyfetch&~&L')
     parser = argparse.ArgumentParser(description=color(f'{hyfetch} - neofetch with flags <3'), prog="hyfetch")
 
-    parser.add_argument('-c', '--config', action='store_true', help=color(f'Configure hyfetch'))
-    parser.add_argument('-C', '--config-file', dest='config_file', default=CONFIG_PATH, help=f'Use another config file')
-    parser.add_argument('-p', '--preset', help=f'Use preset', choices=list(PRESETS.keys()))
-    parser.add_argument('-m', '--mode', help=f'Color mode', choices=['8bit', 'rgb'])
-    parser.add_argument('-b', '--backend', help=f'Choose a *fetch backend', choices=['neofetch', 'fastfetch', 'fastfetch-old'])
-    parser.add_argument('--args', help=f'Additional arguments pass-through to backend')
-    parser.add_argument('--c-scale', dest='scale', help=f'Lighten colors by a multiplier', type=float)
-    parser.add_argument('--c-set-l', dest='light', help=f'Set lightness value of the colors', type=float)
-    parser.add_argument('--c-overlay', action='store_true', dest='overlay', help=f'Use experimental overlay color adjusting instead of HSL lightness')
-    parser.add_argument('-V', '--version', dest='version', action='store_true', help=f'Check version')
-    parser.add_argument('--june', action='store_true', help=f'Show pride month easter egg')
-    parser.add_argument('--debug', action='store_true', help=f'Debug mode')
+    parser.add_argument(
+        '-c', '--config', action='store_true', help=color('Configure hyfetch')
+    )
+    parser.add_argument(
+        '-C',
+        '--config-file',
+        dest='config_file',
+        default=CONFIG_PATH,
+        help='Use another config file',
+    )
+    parser.add_argument(
+        '-p', '--preset', help='Use preset', choices=list(PRESETS.keys())
+    )
+    parser.add_argument('-m', '--mode', help='Color mode', choices=['8bit', 'rgb'])
+    parser.add_argument(
+        '-b',
+        '--backend',
+        help='Choose a *fetch backend',
+        choices=['neofetch', 'fastfetch', 'fastfetch-old'],
+    )
+    parser.add_argument(
+        '--args', help='Additional arguments pass-through to backend'
+    )
+    parser.add_argument(
+        '--c-scale',
+        dest='scale',
+        help='Lighten colors by a multiplier',
+        type=float,
+    )
+    parser.add_argument(
+        '--c-set-l',
+        dest='light',
+        help='Set lightness value of the colors',
+        type=float,
+    )
+    parser.add_argument(
+        '--c-overlay',
+        action='store_true',
+        dest='overlay',
+        help='Use experimental overlay color adjusting instead of HSL lightness',
+    )
+    parser.add_argument(
+        '-V',
+        '--version',
+        dest='version',
+        action='store_true',
+        help='Check version',
+    )
+    parser.add_argument(
+        '--june', action='store_true', help='Show pride month easter egg'
+    )
+    parser.add_argument('--debug', action='store_true', help='Debug mode')
 
-    parser.add_argument('--distro', '--test-distro', dest='distro', help=f'Test for a specific distro')
+    parser.add_argument(
+        '--distro',
+        '--test-distro',
+        dest='distro',
+        help='Test for a specific distro',
+    )
     parser.add_argument('--ascii-file', help='Use a specific file for the ascii art')
 
     # Hidden debug arguments
@@ -364,7 +419,7 @@ def run():
         return
 
     # Check if user provided alternative config path
-    if not args.config_file == CONFIG_PATH:
+    if args.config_file != CONFIG_PATH:
         args.config_file = Path(os.path.abspath(args.config_file))
 
         # If provided file does not exist use default config

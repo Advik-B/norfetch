@@ -46,11 +46,7 @@ def get_raw(gradient: list[RGB], ratio: float) -> RGB:
     :param ratio: Between 0-1
     :return: RGB subarray (1d, has 3 values)
     """
-    if ratio == 1:
-        return gradient[-1]
-
-    i = int(ratio * len(gradient))
-    return gradient[i]
+    return gradient[-1] if ratio == 1 else gradient[int(ratio * len(gradient))]
 
 
 class Scale:

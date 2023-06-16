@@ -64,7 +64,7 @@ if __name__ == '__main__':
 
     # head could be null, if the pr repo is deleted
     if info['head'] is None or info['head']['repo'] is None:
-        print(f'Original repo is deleted. Please manually merge.')
+        print('Original repo is deleted. Please manually merge.')
         input('Press any key to continue when the changes are made...')
 
         # Commit with merge
@@ -72,7 +72,6 @@ if __name__ == '__main__':
         print('Committing merge...')
         os.system(f'git commit -a {msg}')
 
-    # Automatically merge
     else:
         head = info['head']['repo']['full_name']
         head_br = info['head']['ref']

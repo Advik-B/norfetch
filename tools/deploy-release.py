@@ -58,7 +58,7 @@ def edit_versions(version: str):
     content = path.read_text()
     changelog_token = '<!-- CHANGELOG STARTS HERE --->'
     changelog_i = content.index(changelog_token) + len(changelog_token)
-    content = content[:changelog_i] + f'\n\n### {version}' + content[changelog_i:]
+    content = f'{content[:changelog_i]}\n\n### {version}{content[changelog_i:]}'
     path.write_text(content)
 
     # 4. neofetch script

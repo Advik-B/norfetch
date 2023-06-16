@@ -30,7 +30,7 @@ if __name__ == '__main__':
     # Read the ignore-list
     with open(Path(__file__).parent / "pull_request_markings.yaml") as stream:
         ignore_list: dict[int, str] = yaml.safe_load(stream)['IgnoreList']
-        ignore_list.update({r: 'merged' for r in resolved})
+        ignore_list |= {r: 'merged' for r in resolved}
 
     # Obtain a list of open issues
     g = Github(per_page=100, login_or_token=os.environ.get('GH_TOKEN'))
@@ -53,7 +53,7 @@ if __name__ == '__main__':
 
     ignore_counter = Counter(ignore_list.values())
     hyfetch_merged = ignore_counter.pop('merged')
-    print(f'Pull Request Statistics:')
+    print('Pull Request Statistics:')
     print(f'> {hyfetch_merged} PRs merged by HyFetch')
     print('\n'.join(f'> {c} PRs closed as {v} by HyFetch' for v, c in sorted(ignore_counter.items(), key=lambda x: -x[1])))
     print()

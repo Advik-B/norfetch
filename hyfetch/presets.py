@@ -12,8 +12,7 @@ def remove_duplicates(seq: Iterable) -> list:
     Remove duplicate items from a sequence while preserving the order
     """
     seen = set()
-    seen_add = seen.add
-    return [x for x in seq if not (x in seen or seen_add(x))]
+    return [x for x in seq if x not in seen and not seen.add(x)]
 
 
 class ColorProfile:
@@ -47,12 +46,8 @@ class ColorProfile:
         preset_len = len(self.colors)
         center_i = preset_len // 2
 
-        # How many copies of each color should be displayed at least?
-        repeats = length // preset_len
+        repeats, extras = divmod(length, preset_len)
         weights = [repeats] * preset_len
-
-        # How many extra space left?
-        extras = length % preset_len
 
         # If there is an even space left, extend the center by one space
         if extras % 2 == 1:

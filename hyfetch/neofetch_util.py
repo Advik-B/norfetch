@@ -148,13 +148,11 @@ class ColorAlignment:
             asc = asc.replace(f'${{c{fore}}}', color('&0' if GLOBAL_CFG.is_light else '&f'))
             lines = asc.split('\n')
 
-            # Add new colors
-            if self.mode == 'horizontal':
-                colors = preset.with_length(len(lines))
-                asc = '\n'.join([l.replace(f'${{c{back}}}', colors[i].to_ansi()) + color('&~&*') for i, l in enumerate(lines)])
-            else:
+            if self.mode != 'horizontal':
                 raise NotImplementedError()
 
+            colors = preset.with_length(len(lines))
+            asc = '\n'.join([l.replace(f'${{c{back}}}', colors[i].to_ansi()) + color('&~&*') for i, l in enumerate(lines)])
             # Remove existing colors
             asc = re.sub(RE_NEOFETCH_COLOR, '', asc)
 
@@ -186,9 +184,7 @@ def if_file(f: str | Path) -> Path | None:
     Return the file if the file exists, or return none. Useful for chaining 'or's
     """
     f = Path(f)
-    if f.is_file():
-        return f
-    return None
+    return f if f.is_file() else None
 
 
 def get_command_path() -> str:
@@ -223,46 +219,46 @@ def ensure_git_bash() -> Path:
 
     :returns git bash path
     """
-    if IS_WINDOWS:
-        # Find installation in default path
-        def_path = Path(r'C:\Program Files\Git\bin\bash.exe')
-        if def_path.is_file():
-            return def_path
+    if not IS_WINDOWS:
+        return
+    # Find installation in default path
+    def_path = Path(r'C:\Program Files\Git\bin\bash.exe')
+    if def_path.is_file():
+        return def_path
 
-        # Detect third-party git.exe in path
-        git_exe = shutil.which("bash") or shutil.which("git.exe") or shutil.which("git")
-        if git_exe is not None:
-            pth = Path(git_exe).parent
-            if (pth / r'bash.exe').is_file():
-                return pth / r'bash.exe'
-            elif (pth / r'bin\bash.exe').is_file():
-                return pth / r'bin\bash.exe'
+    # Detect third-party git.exe in path
+    git_exe = shutil.which("bash") or shutil.which("git.exe") or shutil.which("git")
+    if git_exe is not None:
+        pth = Path(git_exe).parent
+        if (pth / r'bash.exe').is_file():
+            return pth / r'bash.exe'
+        elif (pth / r'bin\bash.exe').is_file():
+            return pth / r'bin\bash.exe'
 
-        # Find installation in PATH (C:\Program Files\Git\cmd should be in path)
-        pth = (os.environ.get('PATH') or '').lower().split(';')
-        pth = [p for p in pth if p.endswith(r'\git\cmd')]
-        if pth:
-            return Path(pth[0]).parent / r'bin\bash.exe'
+    # Find installation in PATH (C:\Program Files\Git\cmd should be in path)
+    pth = (os.environ.get('PATH') or '').lower().split(';')
+    if pth := [p for p in pth if p.endswith(r'\git\cmd')]:
+        return Path(pth[0]).parent / r'bin\bash.exe'
 
-        # Previously downloaded portable installation
-        path = Path(__file__).parent / 'min_git'
-        pkg_path = path / 'package.zip'
-        if path.is_dir():
-            return path / r'bin\bash.exe'
+    # Previously downloaded portable installation
+    path = Path(__file__).parent / 'min_git'
+    pkg_path = path / 'package.zip'
+    if path.is_dir():
+        return path / r'bin\bash.exe'
 
-        # No installation found, download a portable installation
-        print('Git installation not found. Git is required to use HyFetch/neofetch on Windows')
-        if literal_input('Would you like to install a minimal package for Git? (if no is selected colors almost certianly won\'t work)', ['yes', 'no'], 'yes', False) == 'yes':
-            print('Downloading a minimal portable package for Git...')
-            from urllib.request import urlretrieve
-            urlretrieve(MINGIT_URL, pkg_path)
-            print('Download finished! Extracting...')
-            with zipfile.ZipFile(pkg_path, 'r') as zip_ref:
-                zip_ref.extractall(path)
-            print('Done!')
-            return path / r'bin\bash.exe'
-        else:
-            sys.exit()
+    # No installation found, download a portable installation
+    print('Git installation not found. Git is required to use HyFetch/neofetch on Windows')
+    if literal_input('Would you like to install a minimal package for Git? (if no is selected colors almost certianly won\'t work)', ['yes', 'no'], 'yes', False) == 'yes':
+        print('Downloading a minimal portable package for Git...')
+        from urllib.request import urlretrieve
+        urlretrieve(MINGIT_URL, pkg_path)
+        print('Download finished! Extracting...')
+        with zipfile.ZipFile(pkg_path, 'r') as zip_ref:
+            zip_ref.extractall(path)
+        print('Done!')
+        return path / r'bin\bash.exe'
+    else:
+        sys.exit()
 
 
 def check_windows_cmd():
@@ -365,8 +361,8 @@ def run_neofetch(asc: str, args: str = ''):
 
         # Call neofetch with the temp file
         if args:
-            args = ' ' + args
-        run_neofetch_cmd(f'--ascii --source {path.absolute()} --ascii-colors' + args)
+            args = f' {args}'
+        run_neofetch_cmd(f'--ascii --source {path.absolute()} --ascii-colors{args}')
 
 
 def run_fastfetch(asc: str, args: str = '', legacy: bool = False):
@@ -401,10 +397,7 @@ def get_fore_back(distro: str | None = None) -> tuple[int, int] | None:
     if not distro:
         distro = get_distro_name().lower()
     distro = distro.lower().replace(' ', '-')
-    for k, v in fore_back.items():
-        if distro == k.lower():
-            return v
-    return None
+    return next((v for k, v in fore_back.items() if distro == k.lower()), None)
 
 
 # Foreground-background recommendation

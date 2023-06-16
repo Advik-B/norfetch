@@ -67,7 +67,7 @@ def printc(msg: str):
     Print with color
     :param msg: Message with minecraft color codes
     """
-    print(color(msg + '&r'))
+    print(color(f'{msg}&r'))
 
 
 def clear_screen(title: str = ''):
@@ -92,7 +92,7 @@ def redistribute_rgb(r: int, g: int, b: int) -> tuple[int, int, int]:
     threshold = 255.999
     m = max(r, g, b)
     if m <= threshold:
-        return int(r), int(g), int(b)
+        return r, g, b
     total = r + g + b
     if total >= 3 * threshold:
         return int(threshold), int(threshold), int(threshold)
@@ -135,7 +135,7 @@ class RGB:
         :return: RGB object
         """
         hex = hex.lstrip("#")
-        r = int(hex[0:2], 16)
+        r = int(hex[:2], 16)
         g = int(hex[2:4], 16)
         b = int(hex[4:6], 16)
         return cls(r, g, b)
